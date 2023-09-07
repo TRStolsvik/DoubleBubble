@@ -88,9 +88,14 @@ footer .social > a:hover {
   color: #0a71b8;
 }
 
-.btn-outline-light {
+.btn-outline-orange {
   border-color: var(--color-orange);
   color: var(--color-orange);
+}
+
+.btn-orange {
+  background-color: var(--color-orange);
+  color: var(--color-white);
 }
 
 .fizz {

@@ -84,7 +84,72 @@
       </nav>
     </header>
     <main class="flex-shrink-0">
-      <div class="container"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 border-end border-black">
+            <h1 class="border-bottom border-black">
+              Double Bubble: A Coding Project
+            </h1>
+            <p class="lead">
+              In the vein of Fizz Buzz, if you DoubleBubble, you're in
+              trouble!<br />
+              Double Bubble is a JavaScript coding exercise to practice
+              fundamentals.
+            </p>
+            <h2 class="mt-5 border-bottom border-black">Instructions</h2>
+            <p>
+              Enter a double value and a bubble value, and watch the table
+              populate an array from 0-100, where the numbers that are multiples
+              of the double and bubble value displays the words "Double" and
+              "Bubble" respectively, instead. Numbers that are multiples of
+              both, display "Double Bubble!" instead.
+            </p>
+            <p>Enter the desired values and try it out!</p>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="row gx-2">
+              <div class="col-12 col-md-6">
+                <label for="doubleValue" class="form-label"
+                  >Double Value:</label
+                >
+                <input
+                  id="doubleValue"
+                  type="number"
+                  value="3"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="bubbleValue" class="form-label"
+                  >Bubble Value:</label
+                >
+                <input
+                  id="bubbleValue"
+                  type="number"
+                  value="5"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-12 mt-2 text-end">
+                <button
+                  id="btnSubmit"
+                  type="button"
+                  class="btn btn-orange btn-large"
+                >
+                  Double Bubble!
+                </button>
+              </div>
+              <h3 class="mt-5 border-bottom border-black">Results</h3>
+              <div class="table-responsive">
+                <table
+                  id="results"
+                  class="table table-striped table-sm"
+                ></table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="footer mt-auto py-3 bg-dark fixed-bottom">
       <div class="container-fluid">
