@@ -60,7 +60,7 @@ main > .container {
 
 /* Change this color to suit the project, then remove comment! */
 .checklist > li i {
-  color: var(--color-green);
+  color: var(--color-orange);
 }
 
 footer .social > a {
@@ -86,6 +86,23 @@ footer .social > a:hover {
 
 .css3color {
   color: #0a71b8;
+}
+
+.btn-outline-light {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+.fizz {
+  color: var(--color-green);
+}
+
+.buzz {
+  color: var(--color-blue);
+}
+
+.fizzBuzz {
+  color: var(--color-indigo);
 }
 
 @media screen and (max-width: 767px) {
