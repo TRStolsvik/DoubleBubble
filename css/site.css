@@ -98,16 +98,17 @@ footer .social > a:hover {
   color: var(--color-white);
 }
 
-.fizz {
-  color: var(--color-green);
+.Double {
+  color: var(--color-green) !important;
 }
 
-.buzz {
-  color: var(--color-blue);
+.Bubble {
+  color: var(--color-blue) !important;
 }
 
-.fizzBuzz {
-  color: var(--color-indigo);
+.DoubleBubble {
+  font-weight: bold;
+  color: var(--color-indigo) !important;
 }
 
 @media screen and (max-width: 767px) {
