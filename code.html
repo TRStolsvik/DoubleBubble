@@ -88,7 +88,7 @@
     <main class="flex-shrink-0">
       <div class="container">
         <h2 class="border-1 border-bottom border-dark">
-          The Code for Double Bubble is structured in XX functions.
+          The Code for Double Bubble is structured in 3 functions.
         </h2>
         <div id="accordionItemOne" class="accordion mt-2">
           <div class="accordion-item bg-secondary-subtle">
@@ -101,7 +101,7 @@
                 aria-controls="accordionPanelOne"
                 class="accordion-button bg-dark text-light"
               >
-                Function Name #1
+                captureValues()
               </button>
             </h3>
             <div
@@ -112,17 +112,52 @@
                 <div class="row row-cols-1 row-cols-md-2">
                   <div class="col col-md-8">
                     <pre data-start="1"><code class="language-javascript">
-                            // Call Hello World!
-                            function HelloWorld() {
-                                alert('Hello World!');
-                            }                                            
+                      // Capture values from the user
+                      function captureValues() {
+                        // Capture values from user
+                        let doubleValue = document.getElementById('doubleValue').value;
+                        let bubbleValue = document.getElementById('bubbleValue').value;
+                    
+                        // Parse values to integers
+                        doubleValue = parseInt(doubleValue);
+                        bubbleValue = parseInt(bubbleValue);
+                    
+                        // Test if the values are integers
+                        // Only if both values are integers, call the test double bubble function
+                        if (Number.isInteger(doubleValue) && Number.isInteger(bubbleValue)) {
+                          const dbArray = testDoubleBubble(doubleValue, bubbleValue);
+                    
+                          // Display Double Bubble
+                          displayDoubleBubble(dbArray);
+                        }
+                      }                                            
                         </code></pre>
                   </div>
                   <div class="col col-md-4">
-                    <h5>HelloWorld()</h5>
+                    <h5>captureValues()</h5>
                     <p>
-                      Hello World is a function that displays an alert with a
-                      message of "Hello World!"
+                      In the function captureValues() we capture and store the
+                      inputs from the user in two variables, doubleValue and
+                      bubbleValue respectively. The defaults are 3 and 5, but
+                      the user can input any numbers they want.
+                    </p>
+                    <p>
+                      Next we have to parse what are currently strings into
+                      integers, using the parseInt() function on the variables,
+                      and store the integers instead.
+                    </p>
+                    <p>
+                      Finally we verify that we are indeed working with integers
+                      and check both variables with the isInteger() function,
+                      and only if they are both integers, we call the function
+                      testDoubleBubble() with the previous variables as
+                      parameters, and we store the returned array inside a
+                      variable we call dbArray.
+                    </p>
+                    <p>
+                      Finally, inside this same if statement, we call the
+                      displayDoubleBubble() function with the new array as a
+                      parameter, in order to display the results on the page.
                     </p>
                   </div>
                 </div>
@@ -141,7 +176,7 @@
                 aria-controls="accordionPanelTwo"
                 class="accordion-button bg-dark text-light"
               >
-                Function Name #2
+                testDoubleBubble()
               </button>
             </h3>
             <div id="accordionPanelTwo" class="accordion-collapse collapse">
@@ -149,17 +184,174 @@
                 <div class="row row-cols-1 row-cols-md-2">
                   <div class="col col-md-8">
                     <pre data-start="5"><code class="language-javascript">
-                            // Call Hello World!
-                            function HelloWorld() {
-                                alert('Hello World!');
-                            }                                            
+                      // Test Double Bubble
+                      function testDoubleBubble(doubleValue, bubbleValue) {
+                        let dbArray = [];
+                    
+                        // For-loop over a range of 0-100
+                        for (let i = 1; i <= 100; i++) {
+                          // Check if the number at i is multiple of both values, consider switch statement
+                          switch (true) {
+                            // If it is add "Double Bubble!" to the array.
+                            case i % doubleValue == 0 && i % bubbleValue == 0:
+                              dbArray.push('DoubleBubble');
+                              break;
+                    
+                            // Else if it is a multiple of bubble value add "Bubble" to the array.
+                            case i % bubbleValue == 0:
+                              dbArray.push('Bubble');
+                              break;
+                    
+                            // Else if it is a multiple of double value add "Double" to the array.
+                            case i % doubleValue == 0:
+                              dbArray.push('Double');
+                              break;
+                    
+                            default:
+                              // Else if it's not multiple of either, add the number to the array.
+                              dbArray.push(i);
+                              break;
+                          }
+                        }
+                    
+                        // Finally, return the array.
+                        return dbArray;
+                      }                                            
                         </code></pre>
                   </div>
                   <div class="col col-md-4">
-                    <h5>HelloWorld()</h5>
+                    <h5>testDoubleBubble()</h5>
                     <p>
-                      Hello World is a function that displays an alert with a
-                      message of "Hello World!"
+                      In the function testDoubleBubble() we start with declaring
+                      an empty array called dbArray.
+                    </p>
+                    <p>
+                      Next up we run a for-loop starting at 1 and going up to
+                      and including 100, for the numbers 1 to 100. I will
+                      iterate by one for every pass.
+                    </p>
+                    <p>
+                      Inside the for-loop, for every iteration, we will do a
+                      switch statement which uses the modulo operator to first
+                      check i against both values, and if they are both true,
+                      will push the string "DoubleBubble" to the dbArray.<br />
+                      If the first check evaluates as false, we check again,
+                      this time only against bubbleValue, and if it's true, push
+                      the string "Bubble" to the dbArray. <br />
+                      If the check still evaluates to false, we check one final
+                      time against doubleValue, and if it evaluates to true, we
+                      push the string "Double" into the dbArray.<br />
+                      Finally, if none of the checks evaluate to true, we do the
+                      default, which is to push the value of i to the dbArray.
+                    </p>
+                    <p>
+                      Finally outside the loop, when it is done running, we
+                      return dbArray.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="accordionItemThree" class="accordion mt-1">
+          <div class="accordion-item bg-secondary-subtle">
+            <h3 class="accordion-header">
+              <button
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#accordionPanelThree"
+                aria-expanded="true"
+                aria-controls="accordionPanelThree"
+                class="accordion-button bg-dark text-light"
+              >
+                displayDoubleBubble()
+              </button>
+            </h3>
+            <div id="accordionPanelThree" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <div class="row row-cols-1 row-cols-md-2">
+                  <div class="col col-md-8">
+                    <pre data-start="5"><code class="language-javascript">
+                      function displayDoubleBubble(dbArray) {
+                        // Get the body and row from the page
+                        let tableBody = document.getElementById('results');
+                        let templateRow = document.getElementById('dbTemplate');
+                    
+                        // Make sure the table is clear
+                        tableBody.innerHTML = '';
+                    
+                        // For-loop through the array
+                        for (let i = 0; i < dbArray.length; i += 5) {
+                          let tableRow = document.importNode(templateRow.content, true);
+                          let rowCols = tableRow.querySelectorAll('td');
+                    
+                          rowCols[0].classList.add(dbArray[i]);
+                          rowCols[0].textContent = dbArray[i];
+                    
+                          rowCols[1].classList.add(dbArray[i + 1]);
+                          rowCols[1].textContent = dbArray[i + 1];
+                    
+                          rowCols[2].classList.add(dbArray[i + 2]);
+                          rowCols[2].textContent = dbArray[i + 2];
+                    
+                          rowCols[3].classList.add(dbArray[i + 3]);
+                          rowCols[3].textContent = dbArray[i + 3];
+                    
+                          rowCols[4].classList.add(dbArray[i + 4]);
+                          rowCols[4].textContent = dbArray[i + 4];
+                    
+                          tableBody.appendChild(tableRow);
+                        }
+                      }                                            
+                        </code></pre>
+                  </div>
+                  <div class="col col-md-4">
+                    <h5>displayDoubleBubble()</h5>
+                    <p>
+                      The displayDoubleBubble() function takes in the dbArray
+                      from the previous function as a parameter. We also declare
+                      a variable called tableBody an store the contents of the
+                      results id in it. We also declare a variable called
+                      templateRow and store the contents of the dbTemplate id
+                      inside it. Before proceeding, we also make sure that the
+                      content of the tableBody is empty, by making it's
+                      innerHTML an empty string.
+                    </p>
+                    <p>
+                      Now we do a for loop and start i at 0, and let it run for
+                      the length of the dbArray, but unlike normal, we iterate
+                      by 5 everytime it iterates a single time.
+                    </p>
+                    <p>
+                      Inside the loop we declare a variable tableRow and store
+                      the content (children) of templateRow inside it. We also
+                      declare a variable called rowCols and store all the table
+                      data (td's) from the tableRow we just imported, inside it.
+                    </p>
+                    <p>
+                      The next section is the construction of the table data, 5
+                      cells at a time. The 5 groupings are essentially the same,
+                      except we increment the indexes by 1 for every additional
+                      cell we construct.
+                    </p>
+                    <p>
+                      The first line takes the variable rowCols at index 0,
+                      which is the [0] part for the first one, and adds the
+                      contents of dbArray at index i [i] to it's classList. This
+                      is important for styling only, and isn't strictly needed
+                      for the exercise itself, but adds some flavor. The Second
+                      line takes rowCols at index 0 again and adds the contents
+                      of dbArray at index i, to it's textContent.<br />
+                      This way, we will have a table cell with a class of either
+                      a number, or one of the string values from our previous
+                      function, and the same value inside the tags of the cell,
+                      to be displayed on the table.
+                    </p>
+                    <p>
+                      For every loop of 5 cells, we append the tableRow now
+                      containing 5 cells, to the table body, and run the loop
+                      again, incrementing by 5, until finished.
                     </p>
                   </div>
                 </div>
